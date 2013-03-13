@@ -33,6 +33,13 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
+app.get('/mta', function(req, res, next){
+  request('http://mta.info/status/serviceStatus.txt', function(error, response, body){
+    if (!error && response.statusCode == 200){
+      res.send(body)
+    }
+  })
+})
 
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
