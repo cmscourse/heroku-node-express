@@ -5,7 +5,8 @@
 
 var express = require('express')
 , routes = require('./routes')
-, mongoose = require('mongoose');
+, mongoose = require('mongoose')
+, request = require('request');
 
 mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/mongo_test");
 
