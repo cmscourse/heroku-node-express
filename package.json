@@ -9,8 +9,7 @@
     "mongoose": "2.5.10",
     "shortid": "1.0.6",
     "MD5": "latest",
-    "connect-auth": "0.5.1",
-    "request": "*"
+    "connect-auth": "0.5.1"
   },
   "engines": {
     "node": "0.6.x",
