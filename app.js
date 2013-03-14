@@ -16,7 +16,7 @@ var app = module.exports = express.createServer();
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
+  app.set('view engine', 'ejs');
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.static(__dirname + '/public'));
@@ -34,12 +34,13 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
-app.get('/mta', function(req, res, next){
-  request('http://mta.info/status/serviceStatus.txt', function(error, response, body){
-    if (!error && response.statusCode == 200){
-      res.send(body)
-    }
-  })
+app.get('/theme', routes.theme)
+app.get('/theme/:themeName', function(req,res){
+  myTheme = req.route.params.themeName
+  res.send('this theme is : ' + myTheme)
+})
+app.get('/showview', function(req,res){
+  res.render('theme')
 })
 
 var port = process.env.PORT || 3000;
