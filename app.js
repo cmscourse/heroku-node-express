@@ -35,12 +35,6 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.get('/theme', routes.theme)
-/*
-app.get('/theme/:themeName', function(req,res){
-  myTheme = req.route.params.themeName
-  res.send('this theme is : ' + myTheme)
-})
-*/
 app.get('/showview', function(req,res){
   res.render('theme')
 })
