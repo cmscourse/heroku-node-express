@@ -35,8 +35,8 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.get('/theme', routes.theme)
-app.get('/showview', function(req,res){
-  res.render('theme')
+app.get('/todo', function(req,res){
+  res.render('todo-theme')
 })
 
 var port = process.env.PORT || 3000;

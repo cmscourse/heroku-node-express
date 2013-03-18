@@ -26,7 +26,9 @@ function getClientIp(req) {
 exports.index = function(req, res) {
   res.end('Hello World');
 };
-exports.theme = function(req, res) {
 
+exports.theme = function(req, res) {
   res.end('this is my new theme! ' + req.themeName);
 };
+
+
